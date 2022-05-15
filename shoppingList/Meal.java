@@ -26,4 +26,22 @@ public class Meal {
 	public int ingredientSize() {
 		return ingredients.size();
 	}
+	
+	public void select() {
+		if (!(mealName.charAt(0) == '*'))
+			mealName = "*" + mealName;
+	}
+	
+	public void deselect() {
+		if (mealName.charAt(0) == '*')
+			mealName = mealName.substring(1);
+	}
+
+	@Override
+	public String toString() {
+		if (mealName.charAt(0) == '*')
+			return mealName.substring(1);
+		else
+			return mealName;
+	}
 }
